@@ -31,7 +31,15 @@
 body {
     width: 100%;
     margin: 0;
+    padding: 0;
     font-family: 'Source Sans Pro', Helvetica, sans-serif;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 a {
@@ -45,6 +53,9 @@ a {
 *********************************/
 
 nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
     background: rgba(0, 0, 0, .5);
     height: 93px;
 }
@@ -136,6 +147,8 @@ nav {
     height: 93px;
     line-height: 92px;
     text-shadow: 0 0 3px white;
+    /*transition: text-shadow 300ms ease-in-out,
+                font-size 300ms ease-in-out;*/
 }
 
 .be {
@@ -166,7 +179,7 @@ nav {
 
 
 /*********************************
-    CLASS STYLES
+    FRONT PAGE STYLES
 *********************************/
 
 .front-page h1 {
@@ -206,6 +219,39 @@ nav {
     -webkit-text-stroke: 1px rgb(20, 180, 240);
 }
 
+#vinsters-info {
+    display: none;
+    width: 300px;
+    height: 65%;
+    overflow: scroll;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute; top: 110px; right: 50px;
+    font-family: Montserrat;
+    font-size: .9rem;
+    color: #eee;
+}
+
+.close-info {
+    float: right;
+    width: 20px;
+    height: 20px;
+    color: #ccc;
+}
+
+#vinsters-info h3 {
+    margin: 10px 0;
+}
+
+#vinsters-info p {
+    margin: 10px 0;
+}
+
+#vinsters-info i {
+    color: rgb(23, 179, 239);
+}
+
 
 
 /*********************************
@@ -238,6 +284,49 @@ footer {
     padding: 0;
     text-align: center;
     color: #ccc;
+    position: relative;
+}
+
+#share-popup {
+    display: none;
+    width: 225px;
+    height: 60px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute; top: -75px; left: 41%;
+}
+
+#share-popup:after {
+    border-top: 10px solid rgba(0, 0, 0, .5);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    width: 0;
+    height: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 45%;
+}
+
+#share-popup ul {
+    margin: 0;
+    padding: 0;
+}
+
+#share-popup li {
+    display: inline-block;
+    padding-right: 4px;
+}
+
+#share-popup img {
+    width: 40px;
+    height: 40px;
+}
+
+.share-close {
+    color: #aaa;
 }
 
 .code-by {
@@ -257,6 +346,87 @@ footer {
 
 
 
+/*********************************
+    MAP STYLES
+*********************************/
+
+.leaflet-top .leaflet-control {
+  margin-top: 103px;
+}
+
+.leaflet-bottom .leaflet-control {
+  margin-bottom: 50px;
+}
+
+.leaflet-container .leaflet-control-attribution {
+    margin-bottom: 40px;
+}
+
+.leaflet-container h3 {
+    margin: 0;
+    text-decoration: underline;
+    font-family: Montserrat;
+}
+
+.info-popup {
+    display: none;
+    width: 300px;
+    height: 65%;
+    overflow: scroll;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute; top: 110px; right: 50px;
+    font-family: Montserrat;
+    font-size: .9rem;
+    color: #eee;
+}
+
+.marker-title button {
+    border: none;
+    background-color: #fff;
+    font-family: Montserrat;
+    text-decoration: underline;
+}
+
+.add-itinerary img {
+    float: left;
+    width: 20px;
+    height: 20px;
+}
+
+.info-popup h1 {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    color: rgba(33, 33, 33, .9);
+    -webkit-text-stroke: .5px white;
+    text-decoration: underline;
+    margin: .5em 0;
+}
+
+.info-popup h1.popup-line1 {
+    margin-bottom: -1.4em;
+    text-decoration: none;
+}
+
+.info-popup .popup-gallery {
+    width: 280px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.popup-text {
+    font-family: "Source Sans Pro";
+    font-weight: 300;
+    /*overflow: auto;*/
+}
+
+.info-popup .more {
+    color: #fff;
+    display: block;
+    text-align: center;
+}
 
 
 

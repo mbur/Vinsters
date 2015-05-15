@@ -2,14 +2,28 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Vinsters | Indie Wine</title>
+        <title>Vinsters | Map</title>
         <link rel="stylesheet" href="css/normalize.css">
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600italic|Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet'>
         <link rel="stylesheet" href="css/main.css">
+
+        <!-- <link rel="stylesheet" href="css/reveal.css"> -->
+
         <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+        <script src="js/base.js"></script>
+        <script src="js/map.js"></script>
+
+        <!-- // <script src="js/reveal.js"></script> -->
+
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'>
     </head>
     <body>
+
+        <div id='map'></div>
+
         <header>
             <nav>
                 <div class="letter-logo">
@@ -27,10 +41,132 @@
             </nav>
         </header>
 
+        <div id="scribe-popup" class="info-popup">
+            <a href="#" class="add-itinerary"><img src="img/checkmark.png"></a>
+            <a href="#" class="close-info">x</a>
+            <h1>SCRIBE</h1>
+
+            <!-- <div class="reveal">
+                <div class="slides">
+                    <section>
+                        <img src="img/scribe1.jpg">
+                    </section>
+                    <section>
+                        <img src="img/scribe2.jpg">
+                    </section>
+                    <section>
+                        <img src="img/scribe3.jpg">
+                    </section>
+                    <section>
+                        <img src="img/scribe4.jpg">
+                    </section>
+                    <section>
+                        <img src="img/scribe5.jpg">
+                    </section>
+                    <aside class="controls" style="display: block;">
+                        <div class="navigate-left enabled"></div>
+                        <div class="navigate-right enabled"></div>
+                    </aside>
+                </div>
+            </div> -->
+
+            <img class="popup-gallery" src="img/scribe1.jpg">
+
+
+            <div class="popup-text">
+                <p>The Scribe Winery tale begins with a charming young entrepreneur named Andrew Mariani and a storied piece of land, recently a turkey farm, but once one of the first vineyards of California.</p>
+                <p>A mile-long driveway lined with palm trees leads to a decrepit hacienda built a century ago by two bootlegger brothers from Germany. Acres and acres of brush and cactus surround impeccably trellised grapevines. In the distance are vast expanses of conserved mountainside, where foxes and mountain lions roam beneath California bay laurel, oak and madrone trees.</p>
+            </div>
+            <a href="#" class="more">More</a>
+        </div>
+
+        <div id="gunbun-popup" class="info-popup">
+            <a href="#" class="add-itinerary"><img src="img/checkmark.png"></a>
+            <a href="#" class="close-info">x</a>
+            <h1 class="popup-line1">GUNDLACH</h1>
+            <br>
+            <h1>BUNDSCHU</h1>
+            <img class="popup-gallery" src="img/gunbun1.jpg">
+            <div class="popup-text">
+                <p>For six generations and over 150 years, our family has farmed our estate vineyard at the crossroads of the Sonoma Valley, Carneros and Napa Valley appellations. Today, we focus on making small lots of ultra-premium wines from this distinctive and historic property.</p>
+                <p>We invite you to explore the history, people, vineyards and wines of Gundlach Bundschu on this site, but the best way to get to know us is to pay us a visit! And if you never set foot in Sonoma, you can visit us anytime by simply pulling a cork.</p>
+            </div>
+            <a href="#" class="more">More</a>
+        </div>
+
+        <div id="ekj-popup" class="info-popup">
+            <a href="#" class="add-itinerary"><img src="img/checkmark.png"></a>
+            <a href="#" class="close-info">x</a>
+            <h1>ERIC K JAMES</h1>
+            <img class="popup-gallery" src="img/.jpg">
+            <div class="popup-text">
+                <p>The Scribe Winery tale begins with a charming young entrepreneur named Andrew Mariani and a storied piece of land, recently a turkey farm, but once one of the first vineyards of California.</p>
+                <p>A mile-long driveway lined with palm trees leads to a decrepit hacienda built a century ago by two bootlegger brothers from Germany. Acres and acres of brush and cactus surround impeccably trellised grapevines. In the distance are vast expanses of conserved mountainside, where foxes and mountain lions roam beneath California bay laurel, oak and madrone trees.</p>
+            </div>
+            <a href="#" class="more">More</a>
+        </div>
+
+        <div id="kamen-popup" class="info-popup">
+            <a href="#" class="add-itinerary"><img src="img/checkmark.png"></a>
+            <a href="#" class="close-info">x</a>
+            <h1>KAMEN</h1>
+            <img class="popup-gallery" src="img/kamen1.jpg">
+            <div class="popup-text">
+                <p>Growing up in a city housing project in the Bronx and earning a Ph.D in American Studies from the University of Pennsylvania, Robert believes everything happens for a reason, and yet nothing in his life was ever planned. His screenwriting career started quickly with the unexpected sale of his first screenplay. While visiting friends in Sonoma to celebrate this success, he happened upon the 280 acre property. After falling in love with the view, he purchased what is now his vineyard estate and the muse for his bottled screenplay – Kamen Estate Wines.</p>
+            </div>
+            <a href="#" class="more">More</a>
+        </div>
+
+        <div id="bump-popup" class="info-popup">
+            <a href="#" class="add-itinerary"><img src="img/checkmark.png"></a>
+            <a href="#" class="close-info">x</a>
+            <h1>BUMP</h1>
+            <img class="popup-gallery" src="img/scribe1.jpg">
+            <div class="popup-text">
+                <p>The Scribe Winery tale begins with a charming young entrepreneur named Andrew Mariani and a storied piece of land, recently a turkey farm, but once one of the first vineyards of California.</p>
+                <p>A mile-long driveway lined with palm trees leads to a decrepit hacienda built a century ago by two bootlegger brothers from Germany. Acres and acres of brush and cactus surround impeccably trellised grapevines. In the distance are vast expanses of conserved mountainside, where foxes and mountain lions roam beneath California bay laurel, oak and madrone trees.</p>
+            </div>
+            <a href="#" class="more">More</a>
+        </div>
+
+        <div id="pangloss-popup" class="info-popup">
+            <a href="#" class="add-itinerary"><img src="img/checkmark.png"></a>
+            <a href="#" class="close-info">x</a>
+            <h1>PANGLOSS</h1>
+            <img class="popup-gallery" src="img/scribe1.jpg">
+            <div class="popup-text">
+                <p>The Scribe Winery tale begins with a charming young entrepreneur named Andrew Mariani and a storied piece of land, recently a turkey farm, but once one of the first vineyards of California.</p>
+                <p>A mile-long driveway lined with palm trees leads to a decrepit hacienda built a century ago by two bootlegger brothers from Germany. Acres and acres of brush and cactus surround impeccably trellised grapevines. In the distance are vast expanses of conserved mountainside, where foxes and mountain lions roam beneath California bay laurel, oak and madrone trees.</p>
+            </div>
+            <a href="#" class="more">More</a>
+        </div>
+
+        <div id="lasseter-popup" class="info-popup">
+            <a href="#" class="add-itinerary"><img src="img/checkmark.png"></a>
+            <a href="#" class="close-info">x</a>
+            <h1>LASSETER</h1>
+            <img class="popup-gallery" src="img/scribe1.jpg">
+            <div class="popup-text">
+                <p>The Scribe Winery tale begins with a charming young entrepreneur named Andrew Mariani and a storied piece of land, recently a turkey farm, but once one of the first vineyards of California.</p>
+                <p>A mile-long driveway lined with palm trees leads to a decrepit hacienda built a century ago by two bootlegger brothers from Germany. Acres and acres of brush and cactus surround impeccably trellised grapevines. In the distance are vast expanses of conserved mountainside, where foxes and mountain lions roam beneath California bay laurel, oak and madrone trees.</p>
+            </div>
+            <a href="#" class="more">More</a>
+        </div>
+
         <footer>
             <h3 class="copyright">&copy;</h3>
-            <a href="#"><p class="share">Give us some love &#9825;</p></a>
-            <a href="#"><p class="code-by">code by <b class="mbur">mbur</b></p></a>
+            <a href="#" onclick="sharePopup()"><p class="share">Give us some love <b class="some-love">&#9825;</b></p></a>
+                <div id="share-popup">
+                    <ul>
+                        <a href="#"><li><img src="img/facebook-like.png"></li></a>
+                        <a href="#"><li><img src="img/facebook-logo.png"></li></a>
+                        <a href="#"><li><img src="img/twitter-logo.png"></li></a>
+                        <a href="#"><li><img src="img/google+.png"></li></a>
+                        <a href="#" class="share-close" onclick="shareClose()">x</a>
+                    </ul>
+                </div>
+            <a href="https://github.com/mbur"><p class="code-by">code by <b class="mbur">mbur</b></p></a>
         </footer>
+
     </body>
 </html>
